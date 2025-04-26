@@ -1,10 +1,13 @@
 #!/usr/bin/env -S dotnet fsi
-#r "nuget: Fake.Core.Target"
-#r "nuget: Fake.IO.FileSystem"
-#r "nuget: Fake.DotNet.Cli"
-#r "nuget: Fake.Core.Target"
-#r "nuget: Fake.Core.ReleaseNotes"
-#r "nuget: Fake.Tools.Git"
+#if FAKE
+#r "paket:
+nuget Fake.Core.Target
+nuget Fake.IO.FileSystem
+nuget Fake.DotNet.Cli
+nuget Fake.Core.ReleaseNotes
+nuget Fake.Tools.Git //"
+#endif
+#load ".fake/build.fsx/intellisense.fsx"
 
 #nowarn "52"
 
